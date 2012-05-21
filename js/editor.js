@@ -46,22 +46,22 @@
  */
 var Editor = Editor || (function() {
 
-	/**
-	 * The HTML for the Edit pane.
-	 * @var String
-	 */    
+    /**
+     * The HTML for the Edit pane.
+     * @var String
+     */    
     var pane = '<textarea class="editor-pane"></textarea>';
 
-	/**
-	 * The CSS class name for the highlight.
-	 * @var String
-	 */
+    /**
+     * The CSS class name for the highlight.
+     * @var String
+     */
     var highlight = 'editor-highlight';
 
-	/**
-	 * The Function/method to execute when a field has been edited. 
-	 * @var Function
-	 */
+    /**
+     * The Function/method to execute when a field has been edited. 
+     * @var Function
+     */
     var save;
     
     /**
@@ -88,17 +88,17 @@ var Editor = Editor || (function() {
         return text;
     };
 	
-	/** 
-	 * Adds a CSS class to an element.
-	 * @param HTMLElement element The element to add the class to.
-	 * @param String class_name The name of the class to add to the element.
-	 * @return Nothing.
-	 */    
+    /** 
+     * Adds a CSS class to an element.
+     * @param HTMLElement element The element to add the class to.
+     * @param String class_name The name of the class to add to the element.
+     * @return Nothing.
+     */    
     var add_class = function(element, class_name) {
 
-		// Only proceed if the class isn't already there. 
+	// Only proceed if the class isn't already there. 
         if (element.className.indexOf(class_name) === -1) {
-        	// If the list of class names is empty, add the new class name.
+            // If the list of class names is empty, add the new class name.
             if (element.className === '') {
                 element.className = class_name;
             } 
@@ -113,9 +113,9 @@ var Editor = Editor || (function() {
     
     /**
      * Removes a CSS class from an element.
-	 * @param HTMLElement element The element to remove the class from.
-	 * @param String class_name The class name to remove.
-	 * @return Nothing.
+     * @param HTMLElement element The element to remove the class from.
+     * @param String class_name The class name to remove.
+     * @return Nothing.
      */
     var remove_class = function(element, class_name) {
         
@@ -197,18 +197,18 @@ var Editor = Editor || (function() {
         }
     };
 
-	/**
-	 * Registers elements --- this makes them editable.
-	 * @param String selector The CSS selector that selects the elements you
-	 *                        want to make editable.  
-	 */    
+    /**
+     * Registers elements --- this makes them editable.
+     * @param String selector The CSS selector that selects the elements you
+     *                        want to make editable.  
+     */    
     var register = function(selector) {
         
         // Make sure 'querySelectorAll' is available.
         // (IE 7 and lower does not support it.)
         if (document.querySelectorAll !== undefined) {
         	
-        	// Call the 'edit_in_place' method for each selected element.
+      	    // Call the 'edit_in_place' method for each selected element.
             var elements = document.querySelectorAll(selector), 
                 total = elements.length, i;
             for (i = 0; i < elements.length; i += 1) {
@@ -255,7 +255,7 @@ var Editor = Editor || (function() {
         
         // Make this element un-editable while it's being edited.
         // (We don't want to edit the edit pane/textbox!)
-		detach(element,'click', edit);
+	detach(element,'click', edit);
         
         // Save the original HTML of this element 
         // and replace it with the edit pane/textbox.

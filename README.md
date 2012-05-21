@@ -41,7 +41,8 @@ callback function that gets called when something is edited:
     Editor.setup({ save: update });
     Editor.register('#lastname');
 
-Finally, you can specify a custom textbox:
+Finally, you can specify a custom edit pane/textbox for the editing 
+if the default does not suit your needs:
  
      Editor.setup({ pane: '<textarea class="my-edit-pane"></textarea>' });
  
